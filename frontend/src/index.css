@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter&family=Koulen&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+    *::-webkit-scrollbar{
+        display: none;
+    }
+}   
+
+input:focus {
+    outline: none;
+  }
+
+.no-resize {
+    resize: none;
+  }
+  
