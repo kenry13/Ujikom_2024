@@ -1,5 +1,5 @@
 import { Link, useNavigate } from "react-router-dom";
-import configaxios from "../../function/configaxios";
+import configaxios from "../../function/ConfigAxios.js";
 import { useContext } from "react";
 import DataContext from "../../function/Context";
 

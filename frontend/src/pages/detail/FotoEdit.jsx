@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import configaxios from "../../function/configaxios";
+import configaxios from "../../function/ConfigAxios.js";
 
 const FotoEdit = () => {
   const nav = useNavigate();

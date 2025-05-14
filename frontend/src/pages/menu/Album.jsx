@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
-import configaxios from "../../function/configaxios";
+import configaxios from "../../function/ConfigAxios.js";
 import LayoutPage from "../../layout/LayoutPage";
 
 const Album = () => {

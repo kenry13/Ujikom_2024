@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import DataContext from "../../function/Context";
-import configaxios from "../../function/configaxios";
+import configaxios from "../../function/ConfigAxios.js";
 import Comment from "../../component/comment";
 import NavDetail from "../../layout/NavDetail";
 

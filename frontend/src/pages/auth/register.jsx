@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import DataContext from "../../function/Context";
-import configaxios from "../../function/configaxios";
+import configaxios from "../../function/ConfigAxios.js";
 
 const Register = () => {
   const navigate = useNavigate();

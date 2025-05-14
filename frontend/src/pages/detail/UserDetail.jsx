@@ -1,6 +1,6 @@
 import { Link, useParams } from "react-router-dom";
 import LayoutPage from "../../layout/LayoutPage";
-import configaxios from "../../function/configaxios";
+import configaxios from "../../function/ConfigAxios.js";
 import { useEffect, useState } from "react";
 
 const UserDetail = () => {

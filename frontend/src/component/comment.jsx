@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import configaxios from "../function/configaxios";
+import configaxios from "../function/ConfigAxios.js";
 
 const Comment = ({ showComment, fotoId, Comments, updateData, user }) => {
   const [arrComments, setArrComments] = useState(Comments ? [...Comments] : []);
@@ -30,6 +30,7 @@ const Comment = ({ showComment, fotoId, Comments, updateData, user }) => {
   async function deleteComment(commentId) {
     const response = await configaxios.delete(`/komentar/${commentId}`);
     setArrComments(arrComments.filter((comment) => comment.id !== commentId));
+    window.location.reload();
   }
 
   async function updateComment(commentId, commentIsi) {

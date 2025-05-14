@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useContext } from "react";
 import DataContext from "../../function/Context";
-import configaxios from "../../function/configaxios";
+import configaxios from "../../function/ConfigAxios.js";
 import { Link, useNavigate } from "react-router-dom";
 import LayoutPage from "../../layout/LayoutPage";
 

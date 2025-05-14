@@ -1,15 +1,15 @@
 import { useEffect, useState } from "react";
 import LayoutPage from "../../layout/LayoutPage";
-import configaxios from "../../function/configaxios";
+import configaxios from "../../function/ConfigAxios.js";
 import { Link } from "react-router-dom";
 
 const Jelejahi = () => {
   const [keyword, setKeyword] = useState("");
-  const [searchResults, setSearchResults] = useState([]);
+  const [searchResultsUsers, setSearchResults] = useState([]);
   const [albums, setAlbums] = useState([]);
   const [fotos, setFotos] = useState([]);
 
-  const handleSearch = async () => {
+  const SearchUser = async () => {
     try {
       const response = await configaxios.get(
         `/users/search?keyword=${keyword}`
@@ -55,14 +55,14 @@ const Jelejahi = () => {
             className="pl-3 pr-3 w-full rounded-full"
           />
           <button
-            onClick={handleSearch}
+            onClick={SearchUser}
             className="flex max-w-max ml-auto cursor-pointer rounded-full"
           >
             <img src="search.png" alt="search" width="50" height="50" />
           </button>
         </div>
 
-        {searchResults.map((user, i) => (
+        {searchResultsUsers.map((user, i) => (
           <Link
             key={i}
             to={`/user/${user.id_user}`}

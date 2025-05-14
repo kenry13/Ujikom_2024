@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import LayoutPage from "../../layout/LayoutPage";
 import { Link } from "react-router-dom";
-import configaxios from "../../function/configaxios";
+import configaxios from "../../function/ConfigAxios.js";
 
 const Home = () => {
   const [fotos, setFotos] = useState([]);

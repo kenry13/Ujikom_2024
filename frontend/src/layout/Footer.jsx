@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
-import configaxios from "../function/configaxios";
+import configaxios from "../function/ConfigAxios.js";
 
 const Footer = () => {
   const [dropdownOpen, setDropdownOpen] = useState(false);
@@ -53,8 +53,14 @@ const Footer = () => {
     fetchAlbums();
   }, []);
 
+  const sortedAlbums = albums.sort(
+    (a, b) => new Date(a.createdAt) - new Date(b.createdAt)
+  );
+
+  const limitedAlbums = sortedAlbums.slice(0, 3);
+
   return (
-    <footer className="flex justify-center items-center w-full fixed bottom-4 gap-10" >
+    <footer className="flex justify-center items-center w-full fixed bottom-4 gap-10">
       <div className="flex px-1 py-1 max-w-max relative rounded-full border border-black bg-white">
         {/* Link "Beranda" */}
         <Link
@@ -139,7 +145,7 @@ const Footer = () => {
                   >
                     Tampilkan Lebih Banyak
                   </Link>
-                  {albums.map((album, i) => (
+                  {limitedAlbums.map((album, i) => (
                     <Link to={`/album/${album.id_album}`} key={i}>
                       <p className="block py-2 px-4 text-black hover:bg-gray-200 transition duration-300 ease-in-out">
                         {album.nama_album}

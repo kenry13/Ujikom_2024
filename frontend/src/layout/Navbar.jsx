@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
-import configaxios from "../function/configaxios";
-import { useNavigate } from "react-router-dom";
+import configaxios from "../function/ConfigAxios.js";
+import { Link, useNavigate } from "react-router-dom";
 
 const Navbar = ({ setkondisi }) => {
   const [show, setShow] = useState(false);
@@ -18,6 +18,7 @@ const Navbar = ({ setkondisi }) => {
   const closeModalNavbar = () => {
     setModalNavbar(false); // Set state untuk menutup modal Navbar
     setkondisi(true);
+    window.location.reload();
   };
 
   const handleImageChange = (event) => {
@@ -66,9 +67,12 @@ const Navbar = ({ setkondisi }) => {
 
   return (
     <div className="flex shadow-md gap-5 w-screen lg:p-10 p-5  overflow-y-hidden overflow-x-hidden">
-      <h4 className="flex font-inter font-extrabold justify-center items-center sm:text-4xl text-2xl">
+      <Link
+        to={"/home"}
+        className="flex font-inter font-extrabold justify-center items-center sm:text-4xl text-2xl"
+      >
         Your Lens
-      </h4>
+      </Link>
       <div
         className="flex md:hidden justify-center items-center ml-auto cursor-pointer"
         onClick={openModalNavbar}
@@ -134,6 +138,7 @@ const Navbar = ({ setkondisi }) => {
                       id="nama"
                       type="text"
                       className="p-1 input bg-transparent border-2 border-slate-600/60 w-3/4"
+                      required
                     />
                   </div>
                   <div className="w-full flex flex-col gap-2">
@@ -146,6 +151,7 @@ const Navbar = ({ setkondisi }) => {
                       cols="30"
                       rows="3"
                       className="no-resize p-1 input bg-transparent border-2 border-slate-600/60 w-3/4"
+                      required
                     ></textarea>
                     <div className="w-full flex flex-col gap-2">
                       <label htmlFor="album_id" className="label">

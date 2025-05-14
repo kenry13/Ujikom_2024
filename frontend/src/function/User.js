@@ -1,4 +1,4 @@
-import configaxios from "./configaxios";
+import configaxios from "./ConfigAxios.js";
 
 export default class UserFunction {
 

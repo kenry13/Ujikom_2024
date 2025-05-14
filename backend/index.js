@@ -9,6 +9,7 @@ import Like from "./models/LikeModel.js";
 import Foto from "./models/FotoModel.js";
 import Album from "./models/AlbumModel.js";
 import Komentar from "./models/KomentarModel.js";
+import User from "./models/UserModel.js";
 
 const app = Express();
 dotenv.config();
@@ -23,6 +24,7 @@ app.use(Route);
 try {
   await db.authenticate();
   console.log("database connected");
+  // User.sync();
   // Foto.sync();
   // Album.sync();
   // Like.sync();

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import LayoutPage from "../../layout/LayoutPage";
-import configaxios from "../../function/configaxios";
+import configaxios from "../../function/ConfigAxios.js";
 
 const Suka = () => {
   const [likes, setLikes] = useState([]);

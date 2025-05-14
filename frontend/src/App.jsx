@@ -34,35 +34,36 @@ const App = () => {
   useEffect(() => {
     userFunction.get();
   }, []);
-  return <BrowserRouter>
-      <DataContext.Provider value={globalVariabel}>
-        <Middleware next={user == undefined}>
-          <Route path="*" element={<Loading />} />
-        </Middleware>
-
-        <Middleware next={user == false}>
-          <Route path="/" element={<Dashboard />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/register" element={<Register />} />
-          <Route path="/home" element={<Home />} />
-          <Route path="*" element={<Login />} />
-        </Middleware>
-
-        <Middleware next={user}>
-          <Route path="/home" element={<Home />} />
-          <Route path="/explore" element={<Jelejahi />} />
-          <Route path="/profile" element={<Profil />} />
-          <Route path="/like" element={<Suka />} />
-          <Route path="/album" element={<Album />} />
-          <Route path="/album/:slug" element={<AlbumDetail />} />
-          <Route path="/foto/:slug" element={<FotoDetail />} />
-          <Route path="/edit/:slug" element={<FotoEdit />} />
-          <Route path="/user/:id_user" element={<UserDetail />} />   
-          <Route path="*" element={<Page404 />} />
-        </Middleware>
-      </DataContext.Provider>
-    </BrowserRouter>
   
-};
+    return <BrowserRouter>
+        <DataContext.Provider value={globalVariabel}>
+          <Middleware next={user == undefined}>
+            <Route path="*" element={<Loading />} />
+          </Middleware>
+
+          <Middleware next={user == false}>
+            <Route path="/" element={<Dashboard />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/register" element={<Register />} />
+            <Route path="/home" element={<Home />} />
+            <Route path="*" element={<Login />} />
+          </Middleware>
+
+          <Middleware next={user}>
+            <Route path="/home" element={<Home />} />
+            <Route path="/explore" element={<Jelejahi />} />
+            <Route path="/profile" element={<Profil />} />
+            <Route path="/like" element={<Suka />} />
+            <Route path="/album" element={<Album />} />
+            <Route path="/album/:slug" element={<AlbumDetail />} />
+            <Route path="/foto/:slug" element={<FotoDetail />} />
+            <Route path="/edit/:slug" element={<FotoEdit />} />
+            <Route path="/user/:id_user" element={<UserDetail />} />   
+            <Route path="*" element={<Page404 />} />
+          </Middleware>
+        </DataContext.Provider>
+      </BrowserRouter>
+    
+  };
 
 export default App;
